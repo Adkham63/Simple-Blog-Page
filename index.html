@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog Page</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  
+  <div class="container">
+    <header>
+        <div class="category">TECH</div>
+        <div class="info">
+            <div class="tags">
+                <i class="fa-solid fa-tag"></i>
+                <span>Coding, Programming</span>
+            </div>
+        <h1 class="title">Variables and Statements</h1>
+        <p class="subtitle">Variables are a building block of JavaScript, and you can't use JavaScript without knowing variables.</p>
+      </div>
+    </header>
+
+    <section class="details">
+      <div class="item">
+        <h5 class="item-title">Reading Time</h5>
+        <p class="item-text"><span class="item-data">3</span> Min</p>
+      </div>
+
+      <div class="item">
+        <h5 class="item-title">Publish Date</h5>
+        <p class="item-text"><span class="item-data">09 January 2024</span></p>
+      </div>
+
+      <div class="item">
+        <h5 class="item-title">Views</h5>
+        <p class="item-text"><span class="item-data">1K</span> Views</p>
+      </div>
+    </section>
+    <article>
+      <h4>Introduction</h4>
+      <p>We will cover what they are, what the different types of them are, what declaration means as well as what a statement is in JavaScript.
+
+        Go into the /playground folder and make a new file variables.html.
+        
+        Use the HTML base snippet and add a script tag within the body.
+        
+        To make sure everything is working, add a console.log('hey'); within the script tag. Wes will explain the use of the semi colon shortly.
+        
+        If you open up the variables.html file in the browser, you should see 'hey' in the console.</p>
+      <p>There are three different ways to make a variable, which in JavaScript we refer to as declaring a variable. They are: <span>LET, CONST, VAR.</span></p>
+        <h4>VAR</h4>
+        <p>Let's start with var.
+          
+          To make a variable you type var and then you make a name of the variable. You can use almost anything for a variable name (we will discuss the restrictions shortly).</p>
+          <p>What we have done there is created a new variable called first and we set it to a string of "wes" (we will discuss what a string is in a second).
+            <br>
+            Now, if you refresh the variables.html page, and type into the console first, you will see that we actually get the value that is inside of that variable.</p>
+            <h4>LET</h4>
+            <p>The second way to declare a variable is with let.
+              <br>
+              Below the declaration of the variable first. If you refresh the variables.html page, and type in age, you will see 300 returned in the console.</p>
+              <h4>CONST</h4>
+              <p>That is what is called a constant variable.
+                <br>
+                The naming of these things aren't great. Const means constant, but it's still called a variable.
+                <br>
+                var, let, const are all different types of variables, and there are different ways to declare the variables and we will talk about the pros and cons to all of them in just a second.</p>
+                <h4>Statements and Semi-Colons in JavaScript</h4>
+                <p>Before we do that, let's discuss the semi-colon Wes is adding after each JavaScript line.</p>
+                <p>A statement is an instruction to the computer, browser, the JavaScript interpreter to do something.
+                  <br>
+                  This can usually be summarized as a variable that was declared, a variable that was updated, a function that was called, or something was logged to the console.
+                  <br>
+                  Anytime you want to do something in JavaScript, that is referred to as a statement.
+                  <br>
+                  When you are done writing your statement, you add a semi-colon to the end of the line.</p>
+                  <blockquote>"In the language of HTML, every tag is a brushstroke, every attribute a shade, weaving the canvas of a digital masterpiece where code transcends into the artistry of the web." &mdash; ChatGPT</blockquote>
+                  <h4>Code Blocks</h4>
+                  <p>That is because it's something that is referred to as a code block.
+                    <br>
+                    Code blocks are things that are bound by these curly brackets { and }.
+                    <br>
+                    Things like function definitions, if statements, loops do not need a semi-colon at the end because you aren't telling the computer to do something. In those instances, you are just running some code and telling the computer to do something inside of the block.
+                    <br>
+                    Throughout the course Wes will continue to mention why we do and do not use the semi-colon so you can get the hang of it.
+                    <br>
+                    It is possible to get away without writing semi-colons in JavaScript because there is something in JavaScript called ASI, which is automatic semi-colon insertion, but we are not going to cover that because it's a much more advanced topic.</p>
+                    <h4>Scoping</h4>
+                    <p>Scoping in JavaScript answers the question "Where are my variables available to me?"
+                      <br>
+                      We are going to have an entire section of this course focused on scoping because it's such a fundamental part of JavaScript, but for now we need to know that:
+                      <br>
+                      var variables are scoped differently than let and const variables.
+                      var variables are what we refer to as function scoped variables (they are only available within the parent function).
+                      let and const variables are what we refer to as block scoped variables.
+                      What does this mean?!
+                      <br>
+                      We are going to learn what blocks and functions are in the future. Since we haven't covered that yet, just put that on pause temporarily until the functions and blocks video. We will continue on in the functions and block video about this.
+                      <br>
+                      The question is, what are we going to be using in this course?
+                      <br>
+                      They are all valid.
+                      <br>
+                      let and const were introduced as part of what is called es6, which is only a couple of years old. var has been around since JavaScript was invented.
+                      <br>
+                      You may sometimes see people say var variables are old or deprecated, but they are not.
+                      <br>
+                      It's just that some developers (Wes included) prefer to use let and const because the block scoping makes more sense as well the benefit of assigning a constant value to these variables and not accidentally overwriting a variable which can lead to bugs.
+                      <br>
+                      Here is how Wes approaches deciding which of the three to use:
+                      <br>
+                      He uses const by default. Anytime he is assigning a new variable, he just defaults it to const because he doesn't know if he'll need to update that value or not.
+                      If he needs to change a value of a variable, he will use a let. Sometimes he will make a variable const and then realize he needs to update it so he will make it a let variable.
+                      Wes almost never uses a var variable. There are some exceptions like when declaring a variable outside of a block but we will go into more detail about that shortly.</p>
+    </article>
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+</html>
